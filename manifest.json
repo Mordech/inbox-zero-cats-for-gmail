@@ -1,15 +1,15 @@
 {
-	"manifest_version": 2,
-	"name": "Zero-Inbox Cats for Gmail",
-	"version": "0.2",
+  "manifest_version": 2,
+  "name": "Zero-Inbox Cats for Gmail",
+  "version": "0.2",
 
-	"description": "Adds a random cat to the empty state of Gmail inbox",
+  "description": "Adds a random cat to the empty state of Gmail inbox",
 
-	"content_scripts": [
-		{
-			"matches": ["*://mail.google.com/*"],
-			"js": ["gmail-empty-state.js"],
-			"css": ["gmail-empty-state.css"]
-		}
-	]
+  "content_scripts": [
+    {
+      "matches": ["*://mail.google.com/*"],
+      "js": ["gmail-empty-state.js"],
+      "css": ["gmail-empty-state.css"]
+    }
+  ]
 }
