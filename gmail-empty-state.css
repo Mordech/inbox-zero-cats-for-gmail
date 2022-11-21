@@ -1,0 +1,71 @@
+.aRu {
+	padding: 1.5rem !important;
+	text-align: center !important;
+}
+
+.cat-container {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem;
+}
+
+.cat-title {
+	font-size: 2rem;
+	line-height: 1.25;
+	max-width: 18rem;
+	font-weight: 700;
+	color: #202124;
+	text-align: center;
+	margin: unset;
+	padding: unset;
+	z-index: 1;
+}
+
+.cat-image-container {
+	position: relative;
+}
+
+.cat-image, .cat-backdrop {
+	--cat-image-size: clamp(16rem, 40vh, 20rem);
+	height: var(--cat-image-size);
+	width: var(--cat-image-size);
+	background: url("https://source.unsplash.com/random/320x320/?cat") no-repeat center center;
+	background-size: cover;
+}
+
+.cat-image {
+	position: relative;
+	border-radius: var(--cat-image-size);
+	z-index: 1;
+}
+
+.cat-backdrop {
+	position: absolute;
+	inset: 0;
+	filter: blur(90px) brightness(1.7);
+	z-index: 0;
+	animation: cat-idle-animation 10s infinite alternate;
+}
+
+@keyframes cat-idle-animation {
+	0% {
+		transform: scale(1) translate(0, 0);
+	}
+	50% {
+		transform: scale(0.95) translate(0.4, -1.5rem);
+	}
+	100% {
+		transform: scale(0.9) translate(1rem, -1rem);
+	}
+}
+
+.cat-text {
+	font-size: 1rem;
+	font-weight: 300;
+	color: #5f6368;
+	text-align: center;
+	z-index: 1;
+}
