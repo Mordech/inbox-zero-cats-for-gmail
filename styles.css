@@ -4,6 +4,7 @@
 }
 
 .cat-container {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -14,14 +15,15 @@
 
 .cat-title {
   font-size: 2rem;
+  max-width: 24rem;
   line-height: 1.25;
-  max-width: 18rem;
   font-weight: 700;
   color: #202124;
   text-align: center;
   margin: unset;
   padding: unset;
   z-index: 1;
+  white-space: pre-line;
 }
 
 .cat-image-container {
@@ -66,7 +68,7 @@
 
 .cat-text {
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: 400;
   color: #5f6368;
   text-align: center;
   z-index: 1;

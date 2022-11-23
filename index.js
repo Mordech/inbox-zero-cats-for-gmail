@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  /**
+  /**./utils/randomTitle
    * @param {Element} emptyState
    */
   function createCatEmptyState(emptyState) {
@@ -14,7 +14,7 @@
 
     const catTitle = document.createElement('h1');
     catContainer.appendChild(catTitle);
-    catTitle.textContent = `You've achieved inbox zero!`;
+    catTitle.textContent = randomItem(catTitles);
     catTitle.className = 'cat-title';
 
     const imageContainer = document.createElement('div');
