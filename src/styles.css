@@ -49,7 +49,7 @@
 .cat-backdrop {
   position: absolute;
   inset: 0;
-  filter: blur(90px) brightness(1.7);
+  filter: blur(90px) brightness(1.7) saturate(1.5);
   z-index: 0;
   animation: cat-idle-animation 10s infinite alternate;
 }

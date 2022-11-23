@@ -1,0 +1,11 @@
+{
+  "name": "zero-inbox-cats-for-gmail",
+  "version": "0.3.0",
+  "description": "Adds a random cat to the empty state of Gmail inbox",
+  "main": "index.js",
+  "author": "mordech",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "@types/firefox-webext-browser": "^94.0.1"
+  }
+}
