@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Inbox-Zero Cats for Gmail",
-  "version": "0.5",
+  "version": "0.6",
   "description": "Adds a random cat to the empty state of Gmail inbox",
   "content_scripts": [
     {
@@ -27,6 +27,11 @@
   },
   "browser_action": {
     "default_title": "Zero-Inbox Cats for Gmail",
-    "default_popup": "popup/index.html"
+    "default_popup": "popup/index.html",
+    "browser_style": false
+  },
+  "options_ui": {
+    "page": "options/index.html",
+    "open_in_tab": true
   }
 }

@@ -14,6 +14,7 @@ function createCatEmptyState(emptyState) {
 
   const catTitle = document.createElement('h1');
   catContainer.appendChild(catTitle);
+  catTitle.textContent = defaultCatTitles[0];
   setCatTitle(catTitle);
   catTitle.className = 'cat-title';
 

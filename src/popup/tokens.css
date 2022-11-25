@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Eczar:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
 :root,
-:root[data-theme='light'] {
+[data-theme='light'] {
   --color-primary-base: #272931;
   --color-primary-on: #f9f9f9;
   --color-primary-container: #eeeff2;
@@ -47,7 +47,7 @@
   --font-weight-bold: 600;
 }
 
-:root [data-theme='dark'] {
+[data-theme='dark'] {
   --color-primary-base: #f9f9f9;
   --color-primary-on: #272931;
   --color-primary-container: #17181c;
