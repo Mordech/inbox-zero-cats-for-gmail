@@ -10,6 +10,15 @@
   color: inherit;
 }
 
+li,
+ul,
+body,
+summary,
+input,
+.icon {
+  transition: background-color 250ms ease-out, color 150ms ease-out;
+}
+
 :root {
   scroll-behavior: smooth;
   font-family: var(--font-family-sans);
@@ -40,58 +49,13 @@ li {
   border-radius: 0.5rem;
 }
 
-ul.image-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
-  gap: 1.5rem 0.5rem;
-  padding: 1rem;
-  background-color: var(--color-background-surface);
-  border-radius: 0.5rem;
-}
-
-li.image {
-  position: relative;
-  padding: unset;
-  background-color: unset;
-  flex-direction: column;
-}
-
-li.image > img {
-  border-radius: 6rem;
-  width: 6rem;
-  height: 6rem;
-  object-fit: cover;
-  overflow: hidden;
-}
-
-li.random > img {
-  outline: 4px solid var(--color-secondary-container);
-  outline-offset: -3.9px;
-}
-
-li.random::after {
-  content: 'Random';
-  position: absolute;
-  inset-inline-end: -0.25rem;
-  inset-block-start: 0;
-  transform: rotate(12deg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-secondary-container);
-  color: var(--color-secondary-onContainer);
-  font-size: var(--font-size-0);
-  border-radius: 4px;
-  padding: 0.25rem;
-}
-
 body {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   margin: unset;
   margin-inline: auto;
-  width: 32rem;
+  width: 34rem;
   min-height: 100%;
   min-height: 38rem;
   padding: 1.5rem;
@@ -186,10 +150,12 @@ button,
 .btn {
   border: 2px solid var(--color-background-surface);
   border-radius: 0.5rem;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 1.25rem;
+  min-width: 5.5rem;
   font-size: 1rem;
   background-color: var(--color-primary-on);
   color: var(--color-primary-onContainer);
+  fill: var(--color-primary-onContainer);
   cursor: pointer;
 
   transition: all 250ms ease-in-out;
@@ -205,6 +171,7 @@ button:hover,
 .btn:hover {
   background-color: var(--color-primary-base);
   color: var(--color-primary-on);
+  fill: var(--color-primary-on);
 }
 
 button:focus-visible,
@@ -216,6 +183,7 @@ button:disabled,
 .btn:disabled {
   background-color: var(--color-disabled-container);
   color: var(--color-disabled-onContainer);
+  fill: var(--color-disabled-onContainer);
   cursor: not-allowed;
 }
 
@@ -224,24 +192,31 @@ button.destructive,
   background-color: var(--color-error-container);
   border-color: var(--color-error-container);
   color: var(--color-error-onContainer);
+  fill: var(--color-error-onContainer);
 }
 
 button.destructive:hover,
 .btn.destructive:hover {
   background-color: var(--color-error-base);
   border-color: var(--color-error-base);
-  color: var(--color-error-on);
+  color: var(--color-error-container);
+  fill: var(--color-error-container);
 }
 
-button.reset,
-.btn.reset {
+button.destructive.light,
+.btn.destructive.light {
+  background-color: var(--color-background-surface);
+  border-color: var(--color-background-surface);
   color: var(--color-error-base);
+  fill: var(--color-error-base);
 }
 
-button.reset:hover,
-.btn.reset:hover {
-  color: var(--color-error-on);
+button.destructive.light:hover,
+.btn.destructive.light:hover {
   background-color: var(--color-error-base);
+  border-color: var(--color-error-base);
+  color: var(--color-error-container);
+  fill: var(--color-error-container);
 }
 
 .btn {
@@ -285,23 +260,77 @@ header {
   gap: 2rem;
 }
 
-.toggle-theme {
+.icon {
+  min-width: unset;
   display: inline-flex;
-  top: 1rem;
-  background-color: var(--color-primary-base);
-  color: var(--color-primary-on);
-  fill: var(--color-primary-on);
   width: min-content;
   border: unset;
   border-radius: 9999px;
   padding: 0.5rem;
 }
 
-.toggle-theme:focus-visible {
+.toggle-theme {
+  background-color: var(--color-primary-base);
+  color: var(--color-primary-on);
+  fill: var(--color-primary-on);
+}
+
+.icon:focus-visible {
   outline: 2px solid var(--color-primary-base);
   outline-offset: 0.25rem;
 }
 
 .toggle-theme:hover {
   opacity: 0.8;
+}
+
+ul.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
+  gap: 1.5rem 1rem;
+  padding: 1rem;
+  background-color: var(--color-background-surface);
+  border-radius: 0.5rem;
+}
+
+li.image {
+  position: relative;
+  padding: unset;
+  background-color: unset;
+  flex-direction: column;
+}
+
+li.image button {
+  position: absolute;
+  inset-block-end: -0.5rem;
+  inset-inline-end: -0.5rem;
+}
+
+li.image > img {
+  border-radius: 6rem;
+  width: 6rem;
+  height: 6rem;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+li.random > img {
+  outline: 4px solid var(--color-secondary-container);
+  outline-offset: -3.9px;
+}
+
+li.random::after {
+  content: 'Random';
+  position: absolute;
+  inset-inline-end: -0.25rem;
+  inset-block-start: 0;
+  transform: rotate(12deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-secondary-container);
+  color: var(--color-secondary-onContainer);
+  font-size: var(--font-size-0);
+  border-radius: 4px;
+  padding: 0.25rem;
 }

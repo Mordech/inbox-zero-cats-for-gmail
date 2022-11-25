@@ -13,14 +13,15 @@ import { getAndAddValue } from './utils/getAndAddValue.js';
 import { removeItem } from './utils/removeItem.js';
 import { logo } from './assets/logo.js';
 import { initTheme } from './utils/initTheme.js';
-import { darkModeIcon } from './assets/dark-mode.js';
-import { lightModeIcon } from './assets/light-mode.js';
+import { deleteForeverIcon } from './assets/delete-forever.js';
+import { toggleThemeIcon } from './assets/toggle-theme-icon.js';
 
 /**
  * @param {Data['theme']} theme
  */
 const toggleThemeButton = (theme) => html`<button
-  class="toggle-theme"
+  class="toggle-theme icon"
+  aria-label="Toggle to ${theme === 'dark' ? 'light' : 'dark'} mode"
   @click=${() => {
     browser.storage.local
       .set({
@@ -31,7 +32,7 @@ const toggleThemeButton = (theme) => html`<button
       });
   }}
 >
-  ${theme === 'dark' ? lightModeIcon : darkModeIcon}
+  ${toggleThemeIcon}
 </button>`;
 
 const addTitle = async () => {
@@ -92,17 +93,17 @@ const resetImages = async () => {
  */
 const itemList = (category, items) =>
   items.map(
-    (item) => html`<li>
+    (item) => html`<li dir="auto" class="text-item">
       ${item}
-
       <button
         @click=${() => {
           removeItem(category, items, item);
         }}
-        class="destructive small"
+        aria-label=${`Delete title ${item}`}
+        class="destructive light icon"
         style="visibility: ${items.length >= 2 ? 'visible' : 'hidden'}"
       >
-        Remove
+        ${deleteForeverIcon}
       </button>
     </li>`
   );
@@ -130,9 +131,10 @@ const imageList = (category, items) =>
             @click=${() => {
               removeItem(category, items, item);
             }}
-            class="destructive small"
+            class="destructive light icon"
+            aria-label="Delete image"
           >
-            Remove
+            ${deleteForeverIcon}
           </button>`
         : ''}
     </li>`
@@ -147,6 +149,7 @@ const customTitleSection = (catTitles) => html`<div id="custom-titles">
     <div class="custom-category-list content">
       <div class="input-text-row">
         <input
+          dir="auto"
           type="text"
           id="custom-title"
           placeholder="Add custom titles"
@@ -154,7 +157,7 @@ const customTitleSection = (catTitles) => html`<div id="custom-titles">
           @keyup=${addTitleKeyupCallback()}
         />
         <button @click=${addTitle}>Add</button>
-        <button @click=${resetTitles} class="reset">Reset</button>
+        <button @click=${resetTitles} class="destructive">Reset</button>
       </div>
       <ul>
         ${itemList('catTitles', catTitles)}
@@ -163,9 +166,6 @@ const customTitleSection = (catTitles) => html`<div id="custom-titles">
   </details>
 </div> `;
 
-const toggleTheme = () => {};
-
-toggleTheme();
 /**
  * @param {Data['catImageUrls']} catImageUrls
  */
@@ -198,7 +198,7 @@ const customImageSection = (catImageUrls) => html`<div id="custom-images">
               <label class="btn" role="button" for="custom-image"
                 >Upload image</label
               >
-              <button @click=${resetImages} class="reset">Reset</button>`}
+              <button @click=${resetImages} class="destructive">Reset</button>`}
       </div>
       <ul class="image-grid">
         ${imageList('catImageUrls', catImageUrls)}
@@ -212,7 +212,12 @@ const footer = html`<footer>
   <div class="content">
     <p>
       Made with 😻 by
-      <a href="https://elad.mizrahi.cc" target="_blank">Elad Mizrahi</a>
+      <a
+        href="https://elad.mizrahi.cc"
+        target="_blank"
+        aria-label="Go to Elad Mizrahi's portfolio"
+        >Elad Mizrahi</a
+      >
     </p>
     <p>No cats were harmed in the making of this extension.</p>
   </div>

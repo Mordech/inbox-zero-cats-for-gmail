@@ -17,7 +17,7 @@
   --color-error-base: #bd0f29;
   --color-error-on: #fffafb;
   --color-error-container: #fcd9de;
-  --color-error-onContainer: #2f040a;
+  --color-error-onContainer: #5e0815;
   --color-background-base: #f9f9f9;
   --color-background-on: #272931;
   --color-background-surface: #e6e8ec;
@@ -60,7 +60,7 @@
   --color-success-on: #0e2517;
   --color-success-container: #1c4a2f;
   --color-success-onContainer: #daf1e3;
-  --color-error-base: #f7a1ae;
+  --color-error-base: #f37285;
   --color-error-on: #5e0815;
   --color-error-container: #8d0c1f;
   --color-error-onContainer: #fcd9de;
@@ -93,7 +93,7 @@
     --color-success-on: #0e2517;
     --color-success-container: #1c4a2f;
     --color-success-onContainer: #daf1e3;
-    --color-error-base: #f7a1ae;
+    --color-error-base: #f37285;
     --color-error-on: #5e0815;
     --color-error-container: #8d0c1f;
     --color-error-onContainer: #fcd9de;

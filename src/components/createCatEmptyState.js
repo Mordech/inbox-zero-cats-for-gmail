@@ -17,24 +17,15 @@ function createCatEmptyState(emptyState) {
   catTitle.textContent = defaultCatTitles[0];
   setCatTitle(catTitle);
   catTitle.className = 'cat-title';
+  catTitle.dir = 'auto';
 
   const imageContainer = document.createElement('div');
   imageContainer.className = 'cat-image-container';
+  setCatImage(imageContainer);
   catContainer.appendChild(imageContainer);
 
   const catBackdrop = document.createElement('div');
   catBackdrop.className = 'cat-backdrop';
-  browser.storage.local
-    .get('catImageUrls')
-    .then(({ catImageUrls }) => {
-      imageContainer.style.setProperty(
-        '--cat-image-url',
-        `url(${JSON.stringify(randomItem(catImageUrls))})`
-      );
-    })
-    .catch((error) => {
-      error;
-    });
   imageContainer.appendChild(catBackdrop);
 
   const catImage = document.createElement('div');

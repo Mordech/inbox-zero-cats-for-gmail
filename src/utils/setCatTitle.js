@@ -5,8 +5,8 @@
 /**
  * @param {HTMLHeadingElement} catTitle
  */
-async function setCatTitle(catTitle) {
-  await browser.storage.local
+function setCatTitle(catTitle) {
+  browser.storage.local
     .get('catTitles')
     .then(({ catTitles }) => {
       catTitle.textContent = randomItem(catTitles);
