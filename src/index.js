@@ -6,12 +6,12 @@
   'use strict';
 
   // set default cat titles in storage sync
-  browser.storage.sync
+  browser.storage.local
     .get('catTitles')
     .then(({ catTitles }) => {
       if (!catTitles) {
-        browser.storage.sync.set({
-          catTitles: JSON.stringify(defaultCatTitles),
+        browser.storage.local.set({
+          catTitles: defaultCatTitles,
         });
       }
     })

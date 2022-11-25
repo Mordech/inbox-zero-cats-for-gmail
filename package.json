@@ -6,6 +6,7 @@
   "author": "mordech",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
-    "@types/firefox-webext-browser": "^94.0.1"
+    "@types/firefox-webext-browser": "^94.0.1",
+    "lit-html": "^2.4.0"
   }
 }

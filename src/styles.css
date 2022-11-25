@@ -28,6 +28,7 @@
 
 .cat-image-container {
   position: relative;
+  --cat-image-url: url('https://source.unsplash.com/random/320x320/?cat');
 }
 
 .cat-image,
@@ -35,8 +36,7 @@
   --cat-image-size: clamp(16rem, 40vh, 20rem);
   height: var(--cat-image-size);
   width: var(--cat-image-size);
-  background: url('https://source.unsplash.com/random/320x320/?cat') no-repeat
-    center center;
+  background: var(--cat-image-url) no-repeat center center;
   background-size: cover;
 }
 

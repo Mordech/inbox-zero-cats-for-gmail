@@ -1,5 +1,5 @@
 import '../components/createCatEmptyState';
 import '../data/defaults';
-import '../utils';
+import '../utils/randomItem';
 import '../utils/setCatTitle';
 import '../utils/findAndReplaceEmptyState';
