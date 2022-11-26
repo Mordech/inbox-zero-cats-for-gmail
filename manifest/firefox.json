@@ -1,0 +1,47 @@
+{
+  "manifest_version": 2,
+  "name": "Inbox-Zero Cats for Gmail",
+  "version": "0.7",
+  "description": "Adds a random cat to the empty state of Gmail inbox",
+  "icons": {
+    "128": "images/icon128.png",
+    "256": "images/icon256.png",
+    "512": "images/icon512.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://mail.google.com/*"],
+      "js": [
+        "polyfills/browser-polyfill.js",
+        "data/defaults.js",
+        "utils/randomItem.js",
+        "utils/setCatTitle.js",
+        "utils/setCatImage.js",
+        "components/createCatEmptyState.js",
+        "utils/findAndReplaceEmptyState.js",
+        "index.js"
+      ],
+      "css": ["styles.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": ["storage", "unlimitedStorage"],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{1d541bdc-d07e-46ec-a911-aebd8f0f004e}"
+    }
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png"
+    },
+    "default_title": "Zero-Inbox Cats for Gmail",
+    "default_popup": "popup/index.html",
+    "browser_style": false
+  },
+  "options_ui": {
+    "page": "options/index.html",
+    "open_in_tab": true
+  }
+}

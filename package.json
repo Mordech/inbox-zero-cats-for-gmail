@@ -8,5 +8,10 @@
   "devDependencies": {
     "@types/firefox-webext-browser": "^94.0.1",
     "lit-html": "^2.4.0"
+  },
+  "scripts": {
+    "build:firefox": "mkdir -pv dist/firefox && rsync --exclude=\"*.map\" --exclude=\".*\" --exclude=\"@types\" -r src/* dist/firefox && rsync manifest/firefox.json dist/firefox/manifest.json && zip -r dist/zero-inbox-cats-firefox.zip dist/firefox",
+    "build:chrome": "mkdir -pv dist/chrome && rsync --exclude=\"*.map\" --exclude=\".*\" --exclude=\"@types\" -r src/* dist/chrome && rsync manifest/chrome.json dist/chrome/manifest.json && zip -r dist/zero-inbox-cats-chrome.zip dist/chrome",
+    "build": "yarn build:firefox && npm run build:chrome"
   }
 }
