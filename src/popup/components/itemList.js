@@ -17,7 +17,7 @@ export const itemList = (category, items) =>
           removeItem(category, items, item);
         }}
         aria-label=${`Delete title ${item}`}
-        class="destructive light icon"
+        class="destructive icon"
         style="visibility: ${items.length >= 2 ? 'visible' : 'hidden'}"
       >
         ${deleteForeverIcon}

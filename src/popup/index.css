@@ -148,14 +148,16 @@ input[type='file']:focus-visible + label {
 
 button,
 .btn {
-  border: 2px solid var(--color-background-surface);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--color-background-base);
   border-radius: 0.5rem;
   padding: 0.75rem 1.25rem;
   min-width: 5.5rem;
   font-size: 1rem;
-  background-color: var(--color-primary-on);
-  color: var(--color-primary-onContainer);
-  fill: var(--color-primary-onContainer);
+  background-color: var(--color-primary-base);
+  color: var(--color-primary-on);
+  fill: var(--color-primary-on);
   cursor: pointer;
 
   transition: all 250ms ease-in-out;
@@ -165,13 +167,6 @@ button.small,
 .btn.small {
   padding: 0.5rem 0.75rem;
   font-size: var(--font-size-0);
-}
-
-button:hover,
-.btn:hover {
-  background-color: var(--color-primary-base);
-  color: var(--color-primary-on);
-  fill: var(--color-primary-on);
 }
 
 button:focus-visible,
@@ -189,34 +184,19 @@ button:disabled,
 
 button.destructive,
 .btn.destructive {
-  background-color: var(--color-error-container);
-  border-color: var(--color-error-container);
-  color: var(--color-error-onContainer);
-  fill: var(--color-error-onContainer);
+  background-color: var(--color-background-base);
+  border-color: var(--color-background-surface);
+  color: var(--color-error-base);
+  fill: var(--color-error-base);
 }
 
 button.destructive:hover,
 .btn.destructive:hover {
   background-color: var(--color-error-base);
   border-color: var(--color-error-base);
-  color: var(--color-error-container);
-  fill: var(--color-error-container);
-}
-
-button.destructive.light,
-.btn.destructive.light {
-  background-color: var(--color-background-surface);
-  border-color: var(--color-background-surface);
-  color: var(--color-error-base);
-  fill: var(--color-error-base);
-}
-
-button.destructive.light:hover,
-.btn.destructive.light:hover {
-  background-color: var(--color-error-base);
-  border-color: var(--color-error-base);
-  color: var(--color-error-container);
-  fill: var(--color-error-container);
+  color: var(--color-error-on);
+  fill: var(--color-error-on);
+  opacity: 1;
 }
 
 .btn {
@@ -261,6 +241,7 @@ header {
 }
 
 .icon {
+  --color-background-base: var(--color-background-surface);
   min-width: unset;
   display: inline-flex;
   width: min-content;
@@ -280,7 +261,8 @@ header {
   outline-offset: 0.25rem;
 }
 
-.toggle-theme:hover {
+button:hover,
+.btn:hover {
   opacity: 0.8;
 }
 

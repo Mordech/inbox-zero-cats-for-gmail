@@ -10,23 +10,22 @@ import { defaultCatImages } from '../data/defaultCatImages.js';
  * @param {import('../@types/index.js').DataKeys} category
  * @param {string[]} items
  */
-export const imageList = (category, items) =>
-  items.map(
+export const imageList = (category, items) => {
+  const filteredItems = items.filter((image) => !image.endsWith('mrd-random'));
+  return filteredItems.map(
     (item, index) => html`<li
-      class="image ${item.includes(defaultCatImages[0])
-        ? 'random'
-        : 'not-random'}"
+      class="image ${item.endsWith('mrd-spotlight') ? 'random' : 'not-random'}"
     >
       <img
         src=${item}
-        title=${item.includes(defaultCatImages[0])
+        title=${item.endsWith('mrd-spotlight')
           ? item
           : `Image no. ${items.length - index}. User uploaded`}
-        alt=${item.includes(defaultCatImages[0])
-          ? 'Random image of a cat'
+        alt=${item.endsWith('mrd-spotlight')
+          ? 'Random image'
           : `Image no. ${items.length - index}. User uploaded`}
       />
-      ${items.length >= 2
+      ${filteredItems.length >= 2
         ? html`<button
             @click=${() => {
               removeItem(category, items, item);
@@ -39,3 +38,4 @@ export const imageList = (category, items) =>
         : ''}
     </li>`
   );
+};

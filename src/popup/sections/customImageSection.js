@@ -54,7 +54,9 @@ export const customImageSection = (catImageUrls) => html`<div
               <label class="btn" role="button" for="custom-image"
                 >Upload image</label
               >
-              <button @click=${resetImages} class="destructive">Reset</button>`}
+              <button @click=${resetImages} class="destructive revert-btn">
+                Revert
+              </button>`}
       </div>
       <ul class="image-grid">
         ${imageList('catImageUrls', catImageUrls)}

@@ -31,7 +31,9 @@ export const customTitleSection = (catTitles) => html`<div id="custom-titles">
           @keyup=${addTitleKeyupCallback()}
         />
         <button @click=${addTitle}>Add</button>
-        <button @click=${resetTitles} class="destructive">Reset</button>
+        <button @click=${resetTitles} class="destructive revert-btn">
+          Revert
+        </button>
       </div>
       <ul>
         ${itemList('catTitles', catTitles)}
