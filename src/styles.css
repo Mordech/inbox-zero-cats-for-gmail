@@ -28,7 +28,6 @@
 
 .cat-image-container {
   position: relative;
-  --cat-image-url: url('https://source.unsplash.com/random/320x320/?cat');
 }
 
 .cat-image,
