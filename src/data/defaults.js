@@ -11,3 +11,5 @@ const defaultCatTitles = [
   'Breathe in, breathe out.\nYour inbox is empty',
   'Your inbox is\nquiet as a mouse',
 ];
+
+const defaultCatImageUrls = ['https://source.unsplash.com/random/320x320/?cat'];

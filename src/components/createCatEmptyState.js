@@ -9,32 +9,32 @@ function createCatEmptyState(emptyState) {
   emptyState.textContent = '';
 
   const catContainer = document.createElement('div');
-  emptyState.appendChild(catContainer);
   catContainer.className = 'cat-container';
+  emptyState.appendChild(catContainer);
 
   const catTitle = document.createElement('h1');
-  catContainer.appendChild(catTitle);
-  catTitle.textContent = defaultCatTitles[0];
   setCatTitle(catTitle);
-  catTitle.className = 'cat-title';
+  catTitle.className = 'cat-title TB';
   catTitle.dir = 'auto';
+  catContainer.appendChild(catTitle);
 
   const imageContainer = document.createElement('div');
   imageContainer.className = 'cat-image-container';
-  setCatImage(imageContainer);
   catContainer.appendChild(imageContainer);
 
-  const catBackdrop = document.createElement('div');
+  const catBackdrop = document.createElement('img');
+  const catImage = document.createElement('img');
+  setCatImage([catBackdrop, catImage]);
   catBackdrop.className = 'cat-backdrop';
-  imageContainer.appendChild(catBackdrop);
-
-  const catImage = document.createElement('div');
   catImage.className = 'cat-image';
+  catImage.loading = 'eager';
+
+  imageContainer.appendChild(catBackdrop);
   imageContainer.appendChild(catImage);
 
   const catText = document.createElement('span');
+  catText.className = 'cat-text l6';
   catContainer.appendChild(catText);
-  catText.className = 'cat-text';
 
   catText.textContent = 'Go outside and play with a cat!';
 }

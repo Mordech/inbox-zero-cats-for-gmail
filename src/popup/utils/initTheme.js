@@ -10,9 +10,7 @@ export const initTheme = (data) => {
     document.body.attributes['data-theme'].value = theme;
   } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
     document.body.attributes['data-theme'].value = 'dark';
-    browser.storage.local.set({ theme: 'dark' }).catch((error) => error);
   } else {
     document.body.attributes['data-theme'].value = 'light';
-    browser.storage.local.set({ theme: 'light' }).catch((error) => error);
   }
 };

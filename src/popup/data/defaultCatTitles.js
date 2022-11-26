@@ -1,6 +1,6 @@
 // @ts-check
 
-const defaultCatTitles = [
+export const defaultCatTitles = [
   "You've achieved\ninbox zero!",
   'Purrfect!\nYour inbox is empty!',
   "The cat's out of the bag!\nYour inbox is empty",
@@ -11,5 +11,3 @@ const defaultCatTitles = [
   'Breathe in, breathe out.\nYour inbox is empty',
   'Your inbox is\nquiet as a mouse',
 ];
-
-export default defaultCatTitles;
