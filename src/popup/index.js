@@ -19,7 +19,7 @@ const template = (data) => {
   initTheme(data);
   const { catTitles, catImageUrls, theme } = data;
   return html`<header>
-      <h1>Customize your inbox-zero empty state</h1>
+      <h1>Customize your <strong>inbox-zero</strong></h1>
       ${toggleThemeButton(theme)}
     </header>
     ${catTitles ? customTitleSection(catTitles) : resetTitles()}

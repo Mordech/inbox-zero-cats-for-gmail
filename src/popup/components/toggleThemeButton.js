@@ -8,7 +8,7 @@ import { html } from '../modules/lit-html.js';
  * @param {import('../@types/index.js').Data['theme']} theme
  */
 export const toggleThemeButton = (theme) => html`<button
-  class="toggle-theme icon"
+  class="icon toggle-theme"
   aria-label="Toggle to ${theme === 'dark' ? 'light' : 'dark'} mode"
   @click=${() => {
     browser.storage.local

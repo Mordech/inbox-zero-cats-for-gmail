@@ -1,5 +1,7 @@
+// @ts-check
+
 import { html } from '../modules/lit-html.js';
-import { resetTitles, getAndAddValue } from '../utils/index.js';
+import { getAndAddValue } from '../utils/index.js';
 import { itemList } from '../components/index.js';
 
 const addTitle = async () => {
@@ -15,29 +17,30 @@ const addTitleKeyupCallback = () => (e) => {
   }
 };
 /**
- * @param {Data['catTitles']} catTitles
+ * @param {import('../@types/index.js').Data['catTitles']} catTitles
  */
-export const customTitleSection = (catTitles) => html`<div id="custom-titles">
-  <details open class="custom-category-list">
+export const customTitleSection = (catTitles) => html`<section
+  id="custom-titles"
+>
+  <details open>
     <summary>Customize titles</summary>
-    <div class="custom-category-list content">
-      <div class="input-text-row">
-        <input
-          dir="auto"
-          type="text"
-          id="custom-title"
-          placeholder="Add custom titles"
-          name="custom-title"
-          @keyup=${addTitleKeyupCallback()}
-        />
-        <button @click=${addTitle}>Add</button>
-        <button @click=${resetTitles} class="destructive revert-btn">
-          Revert
-        </button>
+    <div class="custom-category-list">
+      <div class="custom-category-list content">
+        <div class="input-text-row">
+          <input
+            dir="auto"
+            type="text"
+            id="custom-title"
+            placeholder="Add custom titles"
+            name="custom-title"
+            @keyup=${addTitleKeyupCallback()}
+          />
+          <button class="primary" @click=${addTitle}>Add</button>
+        </div>
+        <ul>
+          ${itemList('catTitles', catTitles)}
+        </ul>
       </div>
-      <ul>
-        ${itemList('catTitles', catTitles)}
-      </ul>
     </div>
   </details>
-</div> `;
+</section> `;

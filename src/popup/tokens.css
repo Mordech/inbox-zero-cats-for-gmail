@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Eczar:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Eczar:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
 :root,
 [data-theme='light'] {
@@ -45,6 +45,8 @@
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-bold: 600;
+
+  --border-radius: 0.5rem;
 }
 
 [data-theme='dark'] {

@@ -1,6 +1,6 @@
 import { svg } from '../modules/lit-html.js';
 
-export const logo = svg`<svg class="logo" height="48" viewBox="0 0 240 262" fill="none" xmlns="http://www.w3.org/2000/svg">
+export const logo = svg`<svg class="logo" height="42px" viewBox="0 0 240 262" fill="none" xmlns="http://www.w3.org/2000/svg">
 <style>
   .logo path {
     fill: var(--color-primary-base, #fff);

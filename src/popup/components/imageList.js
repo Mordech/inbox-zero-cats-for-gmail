@@ -30,7 +30,7 @@ export const imageList = (category, items) => {
             @click=${() => {
               removeItem(category, items, item);
             }}
-            class="destructive light icon"
+            class="destructive icon"
             aria-label="Delete image"
           >
             ${deleteForeverIcon}
