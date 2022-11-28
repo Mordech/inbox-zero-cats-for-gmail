@@ -9,7 +9,7 @@ export const footer = html`<footer>
     @click=${() => resetTitles() && resetImages()}
     class="destructive small revert-btn"
   >
-    ${resetIcon} Revert to default settings
+    ${resetIcon} Reset settings to default
   </button>
   <div class="lockup">
     ${logo}
