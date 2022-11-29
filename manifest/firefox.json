@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Inbox-Zero Cats for Gmail",
-  "version": "0.9",
+  "version": "0.10",
   "description": "Adds a random cat to the empty state of Gmail inbox",
   "icons": {
     "16": "images/icon_light_16.png",
