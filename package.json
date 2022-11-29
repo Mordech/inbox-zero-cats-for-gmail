@@ -1,0 +1,17 @@
+{
+  "name": "zero-inbox-cats-for-gmail",
+  "version": "0.3.0",
+  "description": "Adds a random cat to the empty state of Gmail inbox",
+  "main": "index.js",
+  "author": "mordech",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "@types/firefox-webext-browser": "^94.0.1",
+    "lit-html": "^2.4.0"
+  },
+  "scripts": {
+    "build:firefox": "mkdir -pv dist/firefox && rsync --exclude=\"*.map\" --exclude=\".*\" --exclude=\"manifest.json\" --exclude=\"@types\" -r src/* dist/firefox && rsync manifest/firefox.json dist/firefox/manifest.json && cd dist && cd firefox && zip -r zero-inbox-cats-firefox.zip ./ && cd .. && cd ..",
+    "build:chrome": "mkdir -pv dist/chrome && rsync --exclude=\"*.map\" --exclude=\".*\" --exclude=\"manifest.json\" --exclude=\"@types\" -r src/* dist/chrome && rsync manifest/chrome.json dist/chrome/manifest.json && cd dist && cd chrome && zip -r zero-inbox-cats-chrome.zip ./ && cd .. && cd ..",
+    "build": "yarn build:firefox && npm run build:chrome"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json.schemastore.org/chrome-manifest",
+  "manifest_version": 3,
+  "name": "Inbox-Zero Cats for Gmail™",
+  "version": "0.10",
+  "description": "Adds a random cat to the empty state of Gmail inbox",
+  "icons": {
+    "16": "images/icon_light_16.png",
+    "48": "images/icon_light_48.png",
+    "128": "images/icon_light_128.png",
+    "256": "images/icon_light_256.png",
+    "512": "images/icon_light_512.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://mail.google.com/*"],
+      "js": [
+        "polyfills/browser-polyfill.js",
+        "data/defaults.js",
+        "utils/randomItem.js",
+        "utils/setCatTitle.js",
+        "utils/setCatImage.js",
+        "components/createCatEmptyState.js",
+        "utils/findAndReplaceEmptyState.js",
+        "index.js"
+      ],
+      "css": ["styles.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": ["storage", "unlimitedStorage"],
+  "action": {
+    "default_icon": {
+      "16": "images/icon_light_16.png",
+      "48": "images/icon_light_48.png",
+      "128": "images/icon_light_128.png"
+    },
+    "theme_icons": [
+      {
+        "light": "images/icon_light_16.png",
+        "dark": "images/icon_dark_16.png",
+        "size": 16
+      },
+      {
+        "light": "images/icon_light_48.png",
+        "dark": "images/icon_dark_48.png",
+        "size": 48
+      },
+      {
+        "light": "images/icon_light_128.png",
+        "dark": "images/icon_dark_128.png",
+        "size": 128
+      },
+      {
+        "light": "images/icon_light_256.png",
+        "dark": "images/icon_dark_256.png",
+        "size": 256
+      },
+      {
+        "light": "images/icon_light_512.png",
+        "dark": "images/icon_dark_512.png",
+        "size": 512
+      }
+    ],
+    "default_title": "Zero-Inbox Cats for Gmail",
+    "default_popup": "popup/index.html",
+    "browser_style": false
+  },
+  "options_ui": {
+    "page": "options/index.html",
+    "open_in_tab": true
+  }
+}
