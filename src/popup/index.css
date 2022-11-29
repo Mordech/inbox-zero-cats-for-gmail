@@ -22,7 +22,6 @@ input,
 
 :root {
   scroll-behavior: smooth;
-  font-family: var(--font-family-sans);
   font-size: 16px;
   line-height: 1.5;
   color: var(--color-background-on);
@@ -60,6 +59,8 @@ li:hover button {
 }
 
 body {
+  fill: var(--color-primary-base);
+  font-family: var(--font-family-ui-base);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -84,16 +85,19 @@ body {
 }
 
 h1 {
-  font-size: var(--font-size-4);
+  font-size: var(--font-size-3);
   font-weight: var(--font-weight-regular);
-  font-family: var(--font-family-serif);
   line-height: 1.15;
-  max-width: 20ch;
+  max-width: 15ch;
 }
 
 details > summary {
-  font-family: var(--font-family-serif);
-  font-weight: var(--font-weight-medium);
+  list-style: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
   font-size: var(--font-size-2);
   line-height: 1.25;
   border-radius: 0 0 0.5rem 0.5rem;
@@ -104,6 +108,18 @@ details > summary {
   top: 0;
   background-color: var(--color-background-base);
   z-index: 1;
+}
+
+input[type='file'] {
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 details > summary:focus-visible {
@@ -123,7 +139,7 @@ details {
 }
 
 .custom-category-list.content {
-  margin-block-start: 0.75rem;
+  margin-block-start: 1rem;
 }
 
 input {

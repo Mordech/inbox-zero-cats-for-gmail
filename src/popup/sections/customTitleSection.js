@@ -3,6 +3,7 @@
 import { html } from '../modules/lit-html.js';
 import { getAndAddValue } from '../utils/index.js';
 import { itemList } from '../components/index.js';
+import { summary } from '../components/summary.js';
 
 const addTitle = async () => {
   const title = document.getElementById('custom-title');
@@ -23,7 +24,7 @@ export const customTitleSection = (catTitles) => html`<section
   id="custom-titles"
 >
   <details open>
-    <summary>Customize titles</summary>
+    ${summary('Customize titles')}
     <div class="custom-category-list">
       <div class="custom-category-list content">
         <div class="input-text-row">

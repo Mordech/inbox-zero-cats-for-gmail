@@ -8,7 +8,8 @@ import { html } from '../modules/lit-html.js';
  * @param {import('../@types/index.js').Data['theme']} theme
  */
 export const toggleThemeButton = (theme) => {
-  const currentTheme = theme || document.body.attributes['data-theme'].value;
+  const dataTheme = document.body.attributes['data-theme'].value;
+  const currentTheme = theme || dataTheme;
   return html`<button
     class="icon toggle-theme"
     aria-label="Toggle to ${currentTheme === 'dark' ? 'light' : 'dark'} mode"

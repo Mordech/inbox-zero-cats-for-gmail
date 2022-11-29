@@ -1,11 +1,10 @@
 // @ts-check
 
 /**
- * @param {import("../@types").Data} data
+ * @param {import("../@types").Data['theme']} theme
  */
-export const initTheme = (data) => {
+export const initTheme = (theme) => {
   document.body.attributes.setNamedItem(document.createAttribute('data-theme'));
-  const { theme } = data;
   if (theme) {
     document.body.attributes['data-theme'].value = theme;
   } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {

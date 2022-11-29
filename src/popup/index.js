@@ -16,8 +16,8 @@ import { customTitleSection, customImageSection } from './sections/index.js';
  * @param {Data} data
  */
 const template = (data) => {
-  initTheme(data);
   const { catTitles, catImageUrls, theme } = data;
+  initTheme(theme);
   return html`<header>
       <h1>Customize your <strong>inbox-zero</strong></h1>
       ${toggleThemeButton(theme)}

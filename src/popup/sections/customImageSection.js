@@ -4,6 +4,7 @@ import { html } from '../modules/lit-html.js';
 import { getAndAddValue } from '../utils/index.js';
 import { imageList } from '../components/index.js';
 import { uploadIcon } from '../assets/uploadIcon.js';
+import { summary } from '../components/summary.js';
 
 export const addImage = async () => {
   const images = document.getElementById('custom-image');
@@ -30,7 +31,7 @@ export const customImageSection = (catImageUrls) => html`<section
   id="custom-images"
 >
   <details open>
-    <summary>Customize images</summary>
+    ${summary('Custom Images')}
     <div class="custom-category-list">
       <div class="custom-category-list content">
         <div class="input-text-row">

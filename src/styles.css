@@ -48,20 +48,20 @@
 .cat-backdrop {
   position: absolute;
   inset: 0;
-  filter: blur(90px) brightness(1.7) opacity(0.75);
+  filter: blur(60px) opacity(0.7) saturate(2);
   z-index: 0;
   animation: cat-idle-animation 10s infinite alternate;
 }
 
 @keyframes cat-idle-animation {
   0% {
-    transform: scale(1) translate(0, 0);
+    transform: scale(1);
   }
   50% {
-    transform: scale(0.95) translate(0.4, -1.5rem);
+    transform: scale(0.95);
   }
   100% {
-    transform: scale(0.9) translate(1rem, -1rem);
+    transform: scale(0.9);
   }
 }
 
