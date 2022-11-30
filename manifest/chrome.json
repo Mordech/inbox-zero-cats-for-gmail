@@ -1,8 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/chrome-manifest",
   "manifest_version": 3,
-  "name": "Inbox-Zero Cats for Gmail™",
-  "version": "0.10",
+  "name": "Inbox Zero Cats for Gmail",
+  "version": "0.11",
   "description": "Adds a random cat to the empty state of Gmail inbox",
   "icons": {
     "16": "images/icon_light_16.png",
@@ -62,7 +62,7 @@
         "size": 512
       }
     ],
-    "default_title": "Zero-Inbox Cats for Gmail",
+    "default_title": "Inbox Zero Cats for Gmail",
     "default_popup": "popup/index.html",
     "browser_style": false
   },
