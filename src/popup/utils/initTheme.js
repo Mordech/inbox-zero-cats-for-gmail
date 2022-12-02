@@ -4,12 +4,13 @@
  * @param {import("../@types").Data['theme']} theme
  */
 export const initTheme = (theme) => {
-  document.body.attributes.setNamedItem(document.createAttribute('data-theme'));
+  const dataTheme = document.createAttribute('data-theme');
+  document.body.attributes.setNamedItem(dataTheme);
   if (theme) {
-    document.body.attributes['data-theme'].value = theme;
+    dataTheme.value = theme;
   } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    document.body.attributes['data-theme'].value = 'dark';
+    dataTheme.value = 'dark';
   } else {
-    document.body.attributes['data-theme'].value = 'light';
+    dataTheme.value = 'light';
   }
 };

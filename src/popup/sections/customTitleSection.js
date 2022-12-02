@@ -1,5 +1,3 @@
-// @ts-check
-
 import { html } from '../modules/lit-html.js';
 import { getAndAddValue } from '../utils/index.js';
 import { itemList } from '../components/index.js';
@@ -12,7 +10,8 @@ const addTitle = async () => {
     title.value = '';
   }
 };
-const addTitleKeyupCallback = () => (e) => {
+
+const addTitleKeyupCallback = () => (/** @type {KeyboardEvent} */ e) => {
   if (e.key === 'Enter') {
     addTitle();
   }

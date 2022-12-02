@@ -11,10 +11,10 @@
     "web-ext": "^7.4.0"
   },
   "scripts": {
-    "build:firefox": "rsync manifest/firefox.json src/manifest.json && web-ext build -s ./src/ -a ./dist/firefox/ -o -i=\"**/*.map\" -i=\"**/*.ts\" -i=\"**/@types\"",
-    "build:chrome": "rsync manifest/chrome.json src/manifest.json && web-ext build -s ./src/ -a ./dist/chrome/ -o -i=\"**/*.map\" -i=\"**/*.ts\" -i=\"**/@types\"",
-    "build": "yarn build:firefox && npm run build:chrome",
-    "start": "rsync manifest/firefox.json src/manifest.json && yarn web-ext run --source-dir ./src/ -t firefox-desktop -t chromium --watch-file -u https://mail.google.com/mail/u/0/#inbox",
+    "build:firefox": "source .env && rsync $FIREFOX_MANIFEST src/manifest.json && $WEBEXT_BUILD_COMMAND -a ./dist/firefox/",
+    "build:chrome": "source .env && rsync $CHROME_MANIFEST src/manifest.json && $WEBEXT_BUILD_COMMAND -a ./dist/chrome/",
+    "build": "yarn build:firefox && yarn build:chrome",
+    "start": "source .env && rsync $FIREFOX_MANIFEST src/manifest.json && $WEBEXT_RUN_COMMAND",
     "lint": "web-ext lint -s ./src/"
   }
 }

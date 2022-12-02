@@ -22,7 +22,7 @@ export const removeItem = (category, itemList, item) => {
         });
     }
     removeFromArray(item);
-    browser.storage.local
+    return browser.storage.local
       .set({ [category]: values })
       .then(() => renderContent())
       .catch((error) => {
@@ -30,6 +30,9 @@ export const removeItem = (category, itemList, item) => {
       });
   }
 
+  /**
+   * @param {string} currentItem
+   */
   function removeFromArray(currentItem) {
     const index = values.indexOf(currentItem);
     if (index > -1) {

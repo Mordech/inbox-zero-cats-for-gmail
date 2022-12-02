@@ -1,5 +1,3 @@
-// @ts-check
-
 import { toggleThemeIcon } from '../assets/toggleThemeIcon.js';
 import { renderContent } from '../index.js';
 import { html } from '../modules/lit-html.js';
@@ -8,7 +6,11 @@ import { html } from '../modules/lit-html.js';
  * @param {import('../@types/index.js').Data['theme']} theme
  */
 export const toggleThemeButton = (theme) => {
-  const dataTheme = document.body.attributes['data-theme'].value;
+  /**
+   * @type {string}
+   */
+  const dataTheme =
+    document.body.attributes.getNamedItem('data-theme')?.value || 'light';
   const currentTheme = theme || dataTheme;
   return html`<button
     class="icon toggle-theme"
