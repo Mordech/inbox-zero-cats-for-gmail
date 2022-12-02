@@ -14,8 +14,8 @@
 }
 
 .cat-title {
-  font-size: clamp(1.25rem, var(--relative-font-size, 2.5vh), 2rem) !important;
-  max-width: 24rem;
+  font-size: clamp(1.25rem, var(--relative-font-size, 2.75vh), 2rem) !important;
+  max-width: 12em;
   line-height: 1.25;
   font-weight: 700;
   text-align: center;
