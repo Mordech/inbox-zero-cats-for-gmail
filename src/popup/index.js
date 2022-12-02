@@ -27,11 +27,8 @@ const template = (data) => {
 };
 
 export const renderContent = async () => {
-  browser.storage.local
-    .get()
-    // @ts-ignore
-    .then((result) => render(template(result), document.body))
-    .catch((error) => error);
+  const data = await browser.storage.local.get().catch((error) => error);
+  render(template(data), document.body);
 };
 
 renderContent();

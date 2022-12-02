@@ -1,5 +1,3 @@
-// @ts-check
-
 import { html } from '../modules/lit-html.js';
 import { removeItem } from '../utils/removeItem.js';
 import { deleteForeverIcon } from '../assets/deleteForeverIcon.js';

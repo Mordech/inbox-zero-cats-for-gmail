@@ -1,4 +1,3 @@
-// TODO: remove all when delete one
 export const defaultCatImages = [
   'https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?fit=crop&w=320&h=320&q=100&mrd-spotlight',
   'https://images.unsplash.com/photo-1533738363-b7f9aef128ce?fit=crop&w=320&h=320&q=100&mrd-random',

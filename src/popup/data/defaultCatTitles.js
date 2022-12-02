@@ -1,5 +1,3 @@
-// @ts-check
-
 export const defaultCatTitles = [
   "You've achieved\ninbox zero!",
   'Purrfect!\nYour inbox is empty!',

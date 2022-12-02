@@ -1,12 +1,11 @@
 import { html } from '../modules/lit-html.js';
 import { logo } from '../assets/logo.js';
-import { resetImages } from '../utils/resetImages.js';
-import { resetTitles } from '../utils/resetTitles.js';
+import { resetImages, resetTitles } from '../utils/index.js';
 import { resetIcon } from '../assets/resetIcon.js';
 
 export const footer = html`<footer>
   <button
-    @click=${() => resetTitles() && resetImages()}
+    @click=${async () => resetImages().then(() => resetTitles())}
     class="destructive small revert-btn"
   >
     ${resetIcon} Reset settings to default

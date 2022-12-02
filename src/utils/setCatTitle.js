@@ -5,11 +5,11 @@
 /**
  * @param {HTMLHeadingElement} catTitle
  */
-function setCatTitle(catTitle) {
-  browser.storage.local
+async function setCatTitle(catTitle) {
+  return browser.storage.local
     .get('catTitles')
     .then(({ catTitles }) => {
-      catTitle.textContent = randomItem(catTitles);
+      catTitle.textContent = randomItem(catTitles || defaultCatTitles);
     })
     .catch((error) => {
       error;

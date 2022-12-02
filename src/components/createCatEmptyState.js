@@ -5,7 +5,7 @@
 /**
  * @param {Element} emptyState
  */
-function createCatEmptyState(emptyState) {
+const createCatEmptyState = (emptyState) => {
   emptyState.textContent = '';
 
   const catContainer = document.createElement('div');
@@ -37,4 +37,4 @@ function createCatEmptyState(emptyState) {
   catContainer.appendChild(catText);
 
   catText.textContent = 'Go outside and play with a cat!';
-}
+};

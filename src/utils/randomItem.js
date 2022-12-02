@@ -17,11 +17,10 @@ function randomItem(array) {
   const random = array.filter(
     (item) => item.endsWith('mrd-random') || item.endsWith('mrd-spotlight')
   );
+  const pickRandom = getSimpleRandom(random);
   const nonRandom = array.filter(
     (item) => !item.endsWith('mrd-random') && !item.endsWith('mrd-spotlight')
   );
-  const result = random[0]
-    ? [...nonRandom, getSimpleRandom(random)]
-    : nonRandom;
+  const result = random[0] ? [...nonRandom, pickRandom] : nonRandom;
   return getSimpleRandom(result);
 }

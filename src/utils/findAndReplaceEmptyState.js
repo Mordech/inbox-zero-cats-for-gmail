@@ -6,7 +6,7 @@
  * @param {string} selector
  * @param {string} text
  */
-function findAndReplaceEmptyState(selector, text) {
+const findAndReplaceEmptyState = (selector, text) => {
   document.querySelectorAll(selector).forEach((element) => {
     if (
       (element.firstElementChild?.textContent?.includes(text) &&
@@ -14,7 +14,7 @@ function findAndReplaceEmptyState(selector, text) {
       (element.textContent?.includes(text) &&
         !element.querySelector('.cat-container'))
     ) {
-      createCatEmptyState(element.firstElementChild || element);
+      return createCatEmptyState(element.firstElementChild || element);
     }
   });
-}
+};

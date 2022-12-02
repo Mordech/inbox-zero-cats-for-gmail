@@ -4,14 +4,14 @@
 
 /**
  * Assigns a random image of a cat
- * @param {HTMLImageElement[]} imageContainer
+ * @param {HTMLImageElement[]} imageContainers
  */
-function setCatImage(imageContainer) {
-  browser.storage.local
+async function setCatImage(imageContainers) {
+  return browser.storage.local
     .get('catImageUrls')
     .then(({ catImageUrls }) => {
       const url = randomItem(catImageUrls || defaultCatImageUrls);
-      imageContainer.forEach((image) => (image.src = url));
+      imageContainers.forEach((image) => (image.src = url));
     })
     .catch((error) => {
       error;

@@ -1,5 +1,4 @@
-// @ts-check
-
+// TODO Manage uploading large images
 import { html } from '../modules/lit-html.js';
 import { getAndAddValue } from '../utils/index.js';
 import { imageList } from '../components/index.js';
@@ -7,23 +6,24 @@ import { uploadIcon } from '../assets/uploadIcon.js';
 import { summary } from '../components/summary.js';
 
 export const addImage = async () => {
-  const images = document.getElementById('custom-image');
-
+  const images = document.getElementById('upload-image');
   if (images instanceof HTMLInputElement && images.files) {
     const files = images.files;
-    for await (const file of files) {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = async () => {
-        const res = reader.result?.toString();
-        res && getAndAddValue('catImageUrls', res);
-      };
-      reader.onerror = (error) => {
-        error;
-      };
-    }
+    const reader = new FileReader();
+
+    reader.readAsDataURL(files[0]);
+
+    reader.onloadend = async () => {
+      const res = reader.result?.toString();
+      res && getAndAddValue('catImageUrls', res);
+    };
+
+    reader.onerror = (error) => {
+      error;
+    };
   }
 };
+
 /**
  * @param {import('../@types/index.js').Data['catImageUrls']} catImageUrls
  */
@@ -49,16 +49,7 @@ export const customImageSection = (catImageUrls) => html`<section
                   to upload a photo.
                 </p>
               `
-            : html`<input
-                  type="file"
-                  accept="image/jpeg, image/png, image/jpg"
-                  id="custom-image"
-                  name="custom-image"
-                  @change=${addImage}
-                />
-                <label class="btn primary" role="button" for="custom-image"
-                  >${uploadIcon} Upload image</label
-                >`}
+            : uploadImageButton}
         </div>
         <ul class="image-grid">
           ${imageList('catImageUrls', catImageUrls)}
@@ -66,4 +57,20 @@ export const customImageSection = (catImageUrls) => html`<section
       </div>
     </div>
   </details>
-</section> `;
+</section>`;
+
+const uploadImageButton = html`<input
+    type="file"
+    accept="image/jpeg, image/png, image/jpg"
+    id="upload-image"
+    name="upload-image"
+    @change=${addImage}
+  />
+  <label
+    id="upload-image-button"
+    class="btn primary"
+    role="button"
+    for="upload-image"
+  >
+    ${uploadIcon} Upload image
+  </label> `;

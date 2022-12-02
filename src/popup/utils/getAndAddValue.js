@@ -1,12 +1,10 @@
-// @ts-check
-
 import { renderContent } from '../index.js';
 
 /**
  * @param {import('../@types/index.js').DataKeys} category
  * @param {string} value
  */
-export const getAndAddValue = (category, value) => {
+export const getAndAddValue = (category, value) =>
   browser.storage.local
     .get(category)
     .then((result) => {
@@ -22,4 +20,3 @@ export const getAndAddValue = (category, value) => {
     .catch((error) => {
       error;
     });
-};
