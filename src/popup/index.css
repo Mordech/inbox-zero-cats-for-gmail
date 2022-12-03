@@ -7,6 +7,7 @@
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+  font-weight: inherit;
   color: inherit;
 }
 
@@ -25,6 +26,8 @@ input,
   font-size: 16px;
   line-height: 1.5;
   color: var(--color-background-on);
+  font-weight: var(--font-weight-regular);
+  font-family: var(--font-family-ui-base);
 }
 
 html {
@@ -60,13 +63,12 @@ li:hover button {
 
 body {
   fill: var(--color-primary-base);
-  font-family: var(--font-family-ui-base);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   margin: unset;
   margin-inline: auto;
-  width: 35rem;
+  width: 34rem;
   min-height: 100%;
   min-height: 38rem;
   padding: 1.5rem;
@@ -75,7 +77,6 @@ body {
   font-size: var(--font-size-1);
   overflow-y: scroll;
   overflow-x: hidden;
-  font-weight: var(--font-weight-regular);
 }
 
 .custom-category-list {
@@ -86,7 +87,6 @@ body {
 
 h1 {
   font-size: var(--font-size-3);
-  font-weight: var(--font-weight-regular);
   line-height: 1.15;
   max-width: 15ch;
 }
@@ -99,7 +99,10 @@ details > summary {
   justify-content: space-between;
 
   font-size: var(--font-size-2);
-  line-height: 1.25;
+  font-weight: var(--font-weight-medium);
+  line-height: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   border-radius: 0 0 0.5rem 0.5rem;
   padding: 0.75rem;
   margin-inline: -2px;
@@ -373,5 +376,5 @@ li.random::after {
 }
 
 strong {
-  font-weight: var(--font-weight-bold);
+  font-variation-settings: 'wght' var(--font-weight-bold), 'wdth' 100;
 }

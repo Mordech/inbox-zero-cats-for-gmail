@@ -1,6 +1,6 @@
 {
   "name": "zero-inbox-cats-for-gmail",
-  "version": "0.15.0",
+  "version": "0.16.0",
   "description": "Adds a random cat to the empty state of Gmail inbox",
   "main": "index.js",
   "author": "mordech",
