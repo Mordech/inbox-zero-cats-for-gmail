@@ -1,7 +1,3 @@
-// @ts-check
-
-/** @typedef {import('../@types')} */
-
 /**
  * @param {Element} emptyState
  */

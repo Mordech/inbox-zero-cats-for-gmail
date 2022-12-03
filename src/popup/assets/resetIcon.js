@@ -3,6 +3,7 @@
 import { svg } from '../modules/lit-html.js';
 
 export const resetIcon = svg`<svg
+alt=""
 class="icn-reset"
 width='24'
 height='24'

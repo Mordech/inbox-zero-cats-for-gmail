@@ -9,18 +9,19 @@ import { removeItem } from '../utils/removeItem.js';
  */
 export const imageList = (category, items) => {
   const filteredItems = items.filter((image) => !image.endsWith('mrd-random'));
-  return filteredItems.map(
-    (item, index) => html`<li
-      class="image ${item.endsWith('mrd-spotlight') ? 'random' : 'not-random'}"
-    >
+  return filteredItems.map((item, index) => {
+    const imageNumber = filteredItems.length - index - 1;
+    const isRandom = item.endsWith('mrd-spotlight');
+
+    return html`<li class="image ${isRandom ? 'random' : 'not-random'}">
       <img
         src=${item}
-        title=${item.endsWith('mrd-spotlight')
-          ? item
-          : `Image no. ${items.length - index}. User uploaded`}
-        alt=${item.endsWith('mrd-spotlight')
-          ? 'Random image'
-          : `Image no. ${items.length - index}. User uploaded`}
+        title=${isRandom
+          ? 'Random image of a cat'
+          : `Image no. ${imageNumber}. User uploaded`}
+        alt=${isRandom
+          ? 'Random cat image'
+          : `Image no. ${imageNumber}. User uploaded`}
       />
       ${filteredItems.length >= 2
         ? html`<button
@@ -28,11 +29,13 @@ export const imageList = (category, items) => {
               removeItem(category, items, item);
             }}
             class="destructive icon"
-            aria-label="Delete image"
+            aria-label=${isRandom
+              ? 'Delete all random cat images'
+              : `Delete user uploaded image number ${imageNumber}.`}
           >
             ${deleteForeverIcon}
           </button>`
         : ''}
-    </li>`
-  );
+    </li>`;
+  });
 };

@@ -27,6 +27,9 @@ const template = (data) => {
 };
 
 export const renderContent = async () => {
+  /**
+   * @type {Data}
+   */
   const data = await browser.storage.local.get().catch((error) => error);
   render(template(data), document.body);
 };

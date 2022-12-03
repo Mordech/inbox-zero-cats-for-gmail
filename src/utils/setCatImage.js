@@ -1,7 +1,3 @@
-// @ts-check
-
-/** @typedef {import('../@types')} */
-
 /**
  * Assigns a random image of a cat
  * @param {HTMLImageElement[]} imageContainers

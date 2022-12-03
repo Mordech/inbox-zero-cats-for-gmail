@@ -1,6 +1,6 @@
 import { svg } from '../modules/lit-html.js';
 
-export const expandMoreIcon = svg`<svg class="expand-more-icon" xmlns='http://www.w3.org/2000/svg' height='24' width='24'>
+export const expandMoreIcon = svg`<svg alt="" class="expand-more-icon" xmlns='http://www.w3.org/2000/svg' height='24' width='24'>
 <style>
 .expand-more-icon {
   transition: transform 250ms ease-out;

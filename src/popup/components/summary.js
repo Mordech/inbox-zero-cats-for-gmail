@@ -6,4 +6,7 @@ import { html } from '../modules/lit-html.js';
  * @param {string} title
  */
 export const summary = (title) =>
-  html`<summary>${title} ${expandMoreIcon}</summary>`;
+  html`<summary aria-label=${title}>
+    <h2>${title}</h2>
+    ${expandMoreIcon}
+  </summary>`;
