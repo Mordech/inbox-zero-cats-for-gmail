@@ -3,6 +3,7 @@
 import { svg } from '../modules/lit-html.js';
 
 export const uploadIcon = svg`<svg
+alt="upload icon"
 class="icn-upload"
 width='24'
 height='24'

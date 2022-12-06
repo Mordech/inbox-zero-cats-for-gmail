@@ -31,14 +31,14 @@ export const customTitleSection = (catTitles) => html`<section
             dir="auto"
             type="text"
             id="custom-title"
-            placeholder="Add custom titles"
+            placeholder="Add your titles"
             name="custom-title"
             @keyup=${addTitleKeyupCallback()}
           />
           <button class="primary" @click=${addTitle}>Add</button>
         </div>
         <ul>
-          ${itemList('catTitles', catTitles)}
+          ${itemList('catTitles', catTitles || defaultCatTitles)}
         </ul>
       </div>
     </div>

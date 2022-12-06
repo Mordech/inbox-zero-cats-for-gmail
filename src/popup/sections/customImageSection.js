@@ -4,6 +4,7 @@ import { getAndAddValue } from '../utils/index.js';
 import { imageList } from '../components/index.js';
 import { uploadIcon } from '../assets/uploadIcon.js';
 import { summary } from '../components/summary.js';
+import { defaultCatImages } from '../data/defaultCatImages.js';
 
 export const addImage = async () => {
   const images = document.getElementById('upload-image');
@@ -52,7 +53,7 @@ export const customImageSection = (catImageUrls) => html`<section
             : uploadImageButton}
         </div>
         <ul class="image-grid">
-          ${imageList('catImageUrls', catImageUrls)}
+          ${imageList('catImageUrls', catImageUrls || defaultCatImages)}
         </ul>
       </div>
     </div>
@@ -60,6 +61,7 @@ export const customImageSection = (catImageUrls) => html`<section
 </section>`;
 
 const uploadImageButton = html`<input
+    aria-label="Upload an image"
     type="file"
     accept="image/jpeg, image/png, image/jpg"
     id="upload-image"

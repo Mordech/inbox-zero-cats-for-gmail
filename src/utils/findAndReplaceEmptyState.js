@@ -1,7 +1,3 @@
-// @ts-check
-
-/** @typedef {import('../@types')} */
-
 /**
  * @param {string} selector
  * @param {string} text
